@@ -1,0 +1,541 @@
+<template>
+  <section class="generator">
+    <div class="generator__container">
+      <div class="generator__wrapper">
+        <div class="generator__head">
+          <div class="generator__head-image"></div>
+          <h2 class="generator__head-title">генератор импульсов «Статик-3м»</h2>
+        </div>
+        <div class="generator__list">
+          <div class="generator__item generator__item_cow">
+            <div class="generator__item-preview">
+              <img
+                class="generator__item-icon generator__item-icon_star"
+                src="~/assets/icons/generator-star.svg"
+                alt=""
+              /><img
+                class="generator__item-icon generator__item-icon_cow"
+                src="~/assets/icons/generator-cow.svg"
+                alt=""
+              />
+            </div>
+            <div class="generator__item-info">
+              <h3 class="generator__item-title">Заводское изготовление</h3>
+              <span class="generator__item-text"
+                >Мы предлагаем гарантированно рабочий заводской прибор, успешно
+                прошедший ОТК</span
+              >
+            </div>
+          </div>
+          <div class="generator__item generator__item_dog">
+            <div class="generator__item-preview">
+              <img
+                class="generator__item-icon generator__item-icon_star"
+                src="~/assets/icons/generator-star.svg"
+                alt=""
+              /><img
+                class="generator__item-icon generator__item-icon_dog"
+                src="~/assets/icons/generator-dog.svg"
+                alt=""
+              />
+            </div>
+            <div class="generator__item-info">
+              <h3 class="generator__item-title">работаем с 2015 года</h3>
+              <span class="generator__item-text"
+                >Многолетний опыт производства. Отдел технического
+                контроля</span
+              >
+            </div>
+          </div>
+          <div class="generator__item generator__item_shape">
+            <div class="generator__item-preview">
+              <img
+                class="generator__item-icon generator__item-icon_star"
+                src="~/assets/icons/generator-star.svg"
+                alt=""
+              /><img
+                class="generator__item-icon generator__item-icon_shape"
+                src="~/assets/icons/generator-shape.svg"
+                alt=""
+              />
+            </div>
+            <div class="generator__item-info">
+              <h3 class="generator__item-title">новые технологии</h3>
+              <span class="generator__item-text"
+                >Мы используем современные электронные компоненты. Товар
+                сертифицирован в России, Беларуси, Казахстане, Армении и
+                Киргизии</span
+              >
+            </div>
+          </div>
+          <div class="generator__item generator__item_pig">
+            <div class="generator__item-preview">
+              <img
+                class="generator__item-icon generator__item-icon_star"
+                src="~/assets/icons/generator-star.svg"
+                alt=""
+              /><img
+                class="generator__item-icon generator__item-icon_pig"
+                src="~/assets/icons/generator-pig.svg"
+                alt=""
+              />
+            </div>
+            <div class="generator__item-info">
+              <h3 class="generator__item-title">
+                Ваши отзывы делают нас лучше
+              </h3>
+              <span class="generator__item-text"
+                >Нам важен каждый комментарий, благодаря им мы совершенствуемся.
+                Посмотреть отзывы наших клиентов можно здесь</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "AppGenerator",
+};
+</script>
+
+<style lang="scss">
+@use "@/assets/scss/styles/utils" as ut;
+@use "@/assets/scss/styles/variables" as vars;
+
+.generator {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 0 0 32px 0;
+    background: #0020d0;
+
+    max-width: 1024px;
+
+    @include ut.tablet {
+      padding: 0 0 110px 0;
+    }
+
+    @include ut.desktop {
+      max-width: 1440px;
+      padding: 0 0 84px 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 768px;
+    gap: 28px;
+
+    @include ut.tablet {
+      gap: 25px;
+    }
+
+    @include ut.desktop {
+      gap: 50px;
+      max-width: 1200px;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    @include ut.tablet {
+      gap: 50px;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    @include ut.desktop {
+      gap: 54px;
+    }
+
+    &-image {
+      width: 428px;
+      height: 272px;
+
+      background-repeat: no-repeat;
+      background-image: url("~/assets//images/main/generator-background-mobile.png");
+
+      @include ut.tablet {
+        flex: 0 0 auto;
+        height: 361px;
+        margin: -101px 0px 0px 7px;
+        background-image: url("~/assets//images/main/generator-background-tablet.png");
+      }
+
+      @include ut.desktop {
+        margin: -199px 0 0px -53px;
+        background-size: cover;
+        height: 688px;
+        width: 709px;
+        background-image: url("~/assets//images/main/generator-background-desktop.png");
+      }
+    }
+
+    &-title {
+      padding: 0 39px;
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+
+      text-transform: uppercase;
+
+      color: #ffffff;
+
+      @include ut.tablet {
+        margin: 0 0 -22px 0;
+        padding: 0;
+
+        font-size: 24px;
+        line-height: 31px;
+      }
+
+      @include ut.desktop {
+        margin: 0 0 86px 0;
+        font-size: 40px;
+        line-height: 58px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0 39px;
+
+    gap: 30px;
+
+    @include ut.tablet {
+      row-gap: 25px;
+      column-gap: 62px;
+
+      padding: 0 0 0 48px;
+    }
+
+    @include ut.desktop {
+      padding: 0 0 0 72px;
+      row-gap: 64px;
+      column-gap: 26px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+
+    max-width: 360px;
+
+    @include ut.tablet {
+      max-width: 329px;
+    }
+
+    @include ut.desktop {
+      max-width: 588px;
+    }
+
+    &_cow {
+      @include ut.tablet {
+        gap: 8px;
+
+        .generator__item-preview {
+          margin: 14px 0 0 0;
+        }
+      }
+
+      @include ut.desktop {
+        gap: 3px;
+
+        .generator__item-title {
+          max-width: 300px;
+        }
+
+        .generator__item-info {
+          margin: 3px 0 0 0;
+        }
+      }
+    }
+
+    &_dog {
+      .generator__item-info {
+        gap: 7px;
+      }
+
+      .generator__item-preview {
+        margin: 21px 0 0 0;
+      }
+
+      @include ut.tablet {
+        .generator__item-preview {
+          margin: 15px 0 0 4px;
+        }
+
+        .generator__item-info {
+          gap: 10px;
+        }
+      }
+
+      @include ut.desktop {
+        max-width: 475px;
+        gap: 1px;
+
+        .generator__item-info {
+          margin: 4px 0 0 0;
+          gap: 17px;
+        }
+
+        .generator__item-title {
+          max-width: 203px;
+        }
+      }
+    }
+
+    &_shape {
+      margin-top: 12px;
+
+      .generator__item-info {
+        gap: 10px;
+      }
+
+      .generator__item-preview {
+        margin: 21px 0 0 0;
+      }
+
+      @include ut.tablet {
+        gap: 13px;
+
+        .generator__item-preview {
+          margin: 13px 0 0 0;
+        }
+      }
+
+      @include ut.desktop {
+        gap: 6px;
+
+        .generator__item-info {
+          margin: 7px 0 0 0;
+        }
+
+        .generator__item-title {
+          max-width: 200px;
+        }
+      }
+    }
+
+    &_pig {
+      .generator__item-title {
+        max-width: 267px;
+      }
+
+      .generator__item-text {
+        max-width: 248px;
+      }
+
+      @include ut.tablet {
+        max-width: 327px;
+        gap: 18px;
+
+        .generator__item-icon_star {
+          margin: 0 0 0 4px;
+        }
+
+        .generator__item-title {
+          padding-top: 11px;
+        }
+
+        .generator__item-info {
+          gap: 10px;
+        }
+      }
+
+      @include ut.desktop {
+        max-width: unset;
+
+        .generator__item-title {
+          padding: 19px 0 0 0;
+          max-width: 344px;
+        }
+
+        .generator__item-info {
+          gap: 24px;
+        }
+
+        .generator__item-text {
+          max-width: 360px;
+        }
+      }
+    }
+
+    &-preview {
+      position: relative;
+
+      display: flex;
+
+      margin: 24px 0 0 0;
+    }
+
+    // ICON
+    &-icon {
+      &_star {
+        width: 27px;
+        height: 27px;
+
+        @include ut.tablet {
+          width: 39px;
+          height: 38px;
+        }
+
+        @include ut.desktop {
+          width: 72px;
+          height: 70px;
+        }
+      }
+
+      &_cow {
+        width: 59px;
+        height: 47px;
+
+        margin: -20px 0 0 -33px;
+
+        @include ut.tablet {
+          width: 86px;
+          height: 55px;
+
+          margin: -27px 0 0 -49px;
+        }
+
+        @include ut.desktop {
+          width: 158px;
+          height: 88px;
+
+          margin: -40px 0 0 -92px;
+        }
+      }
+
+      &_dog {
+        width: 50px;
+        height: 40px;
+
+        margin: -22px 0 0 -24px;
+
+        @include ut.tablet {
+          width: 74px;
+          height: 58px;
+
+          margin: -35px 0 0px -40px;
+        }
+
+        @include ut.desktop {
+          width: 116px;
+          height: 110px;
+
+          margin: -62px 0 0px -65px;
+        }
+      }
+
+      &_shape {
+        width: 50px;
+        height: 40px;
+
+        margin: -21px 4px 0 -27px;
+
+        @include ut.tablet {
+          width: 69px;
+          height: 55px;
+
+          margin: -34px 4px 0 -39px;
+        }
+
+        @include ut.desktop {
+          width: 130px;
+          height: 107px;
+
+          margin: -54px 4px 0 -73px;
+        }
+      }
+
+      &_pig {
+        width: 50px;
+        height: 40px;
+
+        margin: -22px 4px 0 -28px;
+
+        @include ut.tablet {
+          width: 57px;
+          height: 55px;
+
+          margin: -29px 4px 0 -39px;
+        }
+
+        @include ut.desktop {
+          width: 107px;
+          height: 99px;
+
+          margin: -49px 4px 0 -79px;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include ut.desktop {
+        gap: 15px;
+      }
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+
+      text-transform: uppercase;
+
+      color: #ffffff;
+
+      @include ut.desktop {
+        font-size: 22px;
+        line-height: 32px;
+      }
+    }
+
+    &-text {
+      max-width: 300px;
+
+      font-family: vars.$montserrat;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #ffffff;
+
+      @include ut.desktop {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: unset;
+      }
+    }
+  }
+}
+</style>

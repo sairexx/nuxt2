@@ -1,0 +1,135 @@
+<template>
+  <section class="documents">
+    <div class="documents__container">
+      <h2 class="documents__title">вся продукция сертифицирована</h2>
+      <div class="documents__slider">
+        <div class="documents__slide">
+          <img
+            class="documents__image"
+            src="~/assets/images/about/document-1.svg"
+            alt=""
+          />
+        </div>
+        <div class="documents__slide">
+          <img
+            class="documents__image"
+            src="~/assets/images/about/document-2.svg"
+            alt=""
+          />
+        </div>
+        <div class="documents__slide">
+          <img
+            class="documents__image"
+            src="~/assets/images/about/document-3.svg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "AppDocument",
+};
+</script>
+
+<style lang="scss">
+@use "@/assets/scss/styles/utils" as ut;
+@use "@/assets/scss/styles/variables" as vars;
+
+.documents {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 60px 0 30px 39px;
+
+    width: 100%;
+    max-width: 764px;
+
+    @include ut.tablet {
+      padding: 80px 0 40px 0;
+    }
+
+    @include ut.desktop {
+      max-width: 1186px;
+      gap: 61px;
+      padding: 90px 0 40px 0;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    color: #0020d0;
+
+    @include ut.tablet {
+      max-width: 505px;
+
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    @include ut.desktop {
+      font-size: 40px;
+      line-height: 49px;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    gap: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: auto;
+
+    @include ut.tablet {
+      gap: 15px;
+      overflow: unset;
+    }
+
+    @include ut.desktop {
+      gap: 22px;
+    }
+  }
+
+  &__slide {
+    flex: 0 0 auto;
+
+    width: 170px;
+    height: 239px;
+
+    @include ut.tablet {
+      width: 245px;
+      height: 342px;
+    }
+
+    @include ut.desktop {
+      width: fit-content;
+      max-width: 386px;
+      height: 518px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+</style>

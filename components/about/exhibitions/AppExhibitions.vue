@@ -1,0 +1,128 @@
+<template>
+  <section class="exhibitions">
+    <div class="exhibitions__container">
+      <h2 class="exhibitions__title">участвуем в крупных выставках</h2>
+      <div class="exhibitions__list">
+        <div class="exhibitions__item">
+          <img
+            class="exhibitions__image"
+            src="~/assets/images/about/exhibitions-1.png"
+            alt=""
+          />
+        </div>
+        <div class="exhibitions__item">
+          <img
+            class="exhibitions__image"
+            src="~/assets/images/about/exhibitions-2.png"
+            alt=""
+          />
+        </div>
+        <div class="exhibitions__item">
+          <img
+            class="exhibitions__image"
+            src="~/assets/images/about/exhibitions-3.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "AppExhibitions",
+};
+</script>
+
+<style lang="scss">
+@use "@/assets/scss/styles/utils" as ut;
+@use "@/assets/scss/styles/variables" as vars;
+
+.exhibitions {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 39px 51px 39px;
+
+    width: 100%;
+    max-width: 765px;
+
+    @include ut.tablet {
+      gap: 29px;
+      padding: 39px 0 75px 0;
+    }
+
+    @include ut.desktop {
+      padding: 65px 0 89px 0;
+      max-width: 1180px;
+
+      gap: 42px;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    color: #0020d0;
+
+    @include ut.tablet {
+      max-width: 505px;
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    @include ut.desktop {
+      max-width: 676px;
+      font-size: 40px;
+      line-height: 49px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include ut.tablet {
+      gap: 15px;
+    }
+
+    @include ut.desktop {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    width: 170px;
+    height: 98px;
+
+    cursor: pointer;
+
+    @include ut.tablet {
+      width: 245px;
+      height: 135px;
+    }
+
+    @include ut.desktop {
+      width: 380px;
+      height: 209px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

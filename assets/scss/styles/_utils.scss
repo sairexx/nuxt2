@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use 'variables' as vars;
+
+// Media
+@mixin tablet {
+  @media only screen and (min-width: ((vars.$tablet + 1) * 1px)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: ((vars.$desktop + 1) * 1px)) {
+    @content;
+  }
+}
