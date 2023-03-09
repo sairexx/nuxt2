@@ -1,14 +1,31 @@
 <script>
 export default {
   name: "Modal",
-  props: ["isVisible", "onHide"],
+  props: {
+    isVisible: {
+      type: Boolean,
+      required: true,
+    },
+    onHide: {
+      type: Function,
+      required: true,
+    },
+  },
+
+  watch: {
+    isVisible(newValue) {
+      newValue
+        ? document.body.classList.add("no-scroll")
+        : document.body.classList.remove("no-scroll");
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="modal">
-    <div class="modal__header">
-      <button @click="onHide">
+  <div v-if="isVisible" class="modal">
+    <div class="modal__content">
+      <button @click="onHide" class="modal__button">
         <svg
           width="23"
           height="24"
@@ -33,11 +50,59 @@ export default {
           />
         </svg>
       </button>
-    </div>
-    <div class="modal__content">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+@use "@/assets/scss/styles/utils" as ut;
+@use "@/assets/scss/styles/variables" as vars;
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(44, 44, 44, 0.8);
+  z-index: 999;
+
+  /* &__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    max-width: 390px;
+
+    padding: 18px 20px 0 20px;
+
+    @include ut.tablet {
+      max-width: ;
+    }
+
+    @include ut.desktop {
+    }
+  } */
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__close {
+  }
+
+  &__content {
+    position: relative;
+    background-color: white;
+  }
+}
+</style>

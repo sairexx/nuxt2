@@ -2,12 +2,14 @@
 import Logo from "./Logo.vue";
 import NavBar from "./NavBar.vue";
 import Button from "../Button.vue";
+import Modal from "../Modal.vue";
 import MenuIcon from "./MenuIcon.vue";
 import BasketIcon from "./BasketIcon.vue";
+import ModalForm from "./ModalForm.vue";
 
 export default {
   name: "AppHeader",
-  components: { NavBar, BasketIcon, MenuIcon, Logo },
+  components: { NavBar, BasketIcon, MenuIcon, Logo, Modal, ModalForm },
 
   data() {
     const isVisibleModal = false;
@@ -19,8 +21,8 @@ export default {
     };
   },
   methods: {
-    console() {
-      console.log("work");
+    setVisibleModal() {
+      this.isVisibleModal = !this.isVisibleModal;
     },
   },
 };
@@ -34,11 +36,14 @@ export default {
 
       <div class="header__info">
         <div class="header__button">
-          <Button title="Заказать звонок" :click="this.console" />
+          <Button title="Заказать звонок" :onClick="this.setVisibleModal" />
         </div>
 
         <BasketIcon />
         <MenuIcon />
+        <Modal :isVisible="isVisibleModal" :onHide="this.setVisibleModal">
+          <ModalForm></ModalForm>
+        </Modal>
       </div>
     </div>
   </header>
