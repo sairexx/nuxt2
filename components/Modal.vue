@@ -64,45 +64,67 @@ export default {
   top: 0;
   left: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   width: 100%;
   height: 100%;
 
-  background: rgba(44, 44, 44, 0.8);
+  padding: 0 19px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow-y: auto;
   z-index: 999;
-
-  /* &__header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    width: 100%;
-    max-width: 390px;
-
-    padding: 18px 20px 0 20px;
-
-    @include ut.tablet {
-      max-width: ;
-    }
-
-    @include ut.desktop {
-    }
-  } */
+  background: rgba(44, 44, 44, 0.8);
 
   &__button {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 11px;
+    right: 6px;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    @include ut.desktop {
+      top: 17px;
+      right: 12px;
+    }
   }
   &__close {
+    width: 15px;
+    height: 15px;
+
+    @include ut.tablet {
+      width: 22px;
+      height: 24px;
+    }
   }
 
   &__content {
+    display: flex;
+    justify-content: center;
+
     position: relative;
+
+    margin-top: 33px;
+    padding: 25px 20px 33px 20px;
+
+    width: 100%;
+    max-width: 390px;
+    z-index: 1000;
+
     background-color: white;
+
+    @include ut.tablet {
+      margin: 108px 0 0 0;
+      max-width: 535px;
+    }
+
+    @include ut.desktop {
+      margin: 251px 0 0 0;
+      max-width: 820px;
+    }
   }
 }
 </style>
